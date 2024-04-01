@@ -1,44 +1,48 @@
-To simplify installation process, you can deploy a container (~virtual machine) with all dependencies pre-installed.
+Для упрощения процесса установки вы можете развернуть контейнер (похож на виртуальную машину) со всеми предустановленными зависимостями.
 
 _tl;dr [dockerhub url](https://hub.docker.com/r/justheuristic/nlp_course/)_
 
-## Install Docker
+## Что такое Docker?
 
-We recommend you to use either native docker (recommended for linux) or kitematic(recommended for windows).
-* Installing [kitematic](https://kitematic.com/), a simple interface to docker (all platforms)
-* Pure docker: Guide for [windows](https://docs.docker.com/docker-for-windows/), [linux](https://docs.docker.com/engine/installation/), or [macOS](https://docs.docker.com/docker-for-mac/).
+Docker - это платформа для разработки, доставки и запуска приложений в контейнерах. Контейнеры позволяют упаковать приложение со всеми его зависимостями в стандартизированную единицу для разработки программного обеспечения. Это обеспечивает, что приложение будет работать в любой среде, будь то локальный компьютер, частный или общедоступный облак. Таким образом, Docker упрощает развертывание и масштабирование приложений, обеспечивая их изоляцию и безопасность.
 
-Below are the instructions for both approaches.
+## Установка Docker
+
+Мы рекомендуем использовать либо нативный docker (рекомендуется для Linux), либо kitematic (рекомендуется для Windows).
+* Установка [kitematic](https://kitematic.com/), простой интерфейс для docker (все платформы)
+* Чистый docker: руководство для [windows](https://docs.docker.com/docker-for-windows/), [linux](https://docs.docker.com/engine/installation/), или [macOS](https://docs.docker.com/docker-for-mac/).
+
+Ниже приведены инструкции для обоих подходов.
 
 ## Kitematic
-Find justheuristic/nlp_course in the search menu. Download and launch the container.
+Найдите justheuristic/nlp_course в меню поиска. Скачайте и запустите контейнер.
 
-Click on "web preview" screen in the top-right __or__ go to settings, ports and find at which port your jupyter is located, usually 32***.
+Нажмите на экран "предварительного просмотра веб-страницы" в правом верхнем углу __или__ перейдите в настройки, порты и найдите на каком порту расположен ваш jupyter, обычно это 32***.
 
-## Native
+## Нативный метод
 `docker run -it -v <local_dir>:/notebooks -p <local_port>:8888 justheuristic/nlp_course sh ../run_jupyter.sh`
 
-For example,
+Например,
 `docker run -it -v /Users/mittov/Documents/shad/semester4/ -p 8888:8888 justheuristic/nlp_course sh ../run_jupyter.sh`
 
+После этого вы сможете получить доступ к вашему jupyter в браузере по адресу `localhost:<local_port>`.
 
-Then you can access your jupyter in a browser at `localhost:<local_port>`. 
+Если от вас потребуется ввести токен, вы найдете его в логах контейнера, например, `localhost:8888/?token=ad1a5a0aab43efb47a9a805388fcf508d0b5f84a16e4542b&token=ad1a5a0aab43efb47a9a805388fcf508d0b5f84a16e4542b`.
 
-If it asks you to enter token, you will find one in container logs, e.g. `localhost:8888/?token=ad1a5a0aab43efb47a9a805388fcf508d0b5f84a16e4542b&token=ad1a5a0aab43efb47a9a805388fcf508d0b5f84a16e4542b`.
-
-## Manual
-Build container
+## Вручную
+Сборка контейнера
 
 `$ docker build -t nlp .`
 
-
-Run it
+Запуск
 
 `$ docker run --rm -it -v <local_dir>:/notebooks -p <local_port>:8888 nlp`
 
-examples:
+Примеры:
 
 `$ docker run --rm -it -v /Users/mittov/Documents/shad/semester4/:/notebooks -p 8888:8888 nlp`
 
-Copy the token from console and run
-http://localhost:8888/ (if it asks for token, see "native")
+Скопируйте токен из консоли и откройте
+http://localhost:8888/ (если спрашивают токен, смотрите "нативный метод")
+
+Author: @SoldatParfait
