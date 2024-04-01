@@ -1,8 +1,5 @@
 # studcamp-ml-24
 
-Ссылка на презентацию с открытия
-- https://docs.google.com/presentation/d/1Mtzy1rrmB4mAz81VNcrnYndWCWDF95-6oDNJWdUuFak/edit#slide=id.p (Савелий Прохоров)
-
 Гайд по Покровке
 - https://t.me/c/2105638761/10/1334
 
