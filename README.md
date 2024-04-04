@@ -2,6 +2,9 @@
 
 **Делайте пулл реквесты своих версий домашних работ!** (минимум спустя 2 дня после публикации)
 
+Записи лекций
+- https://docs.google.com/spreadsheets/d/1B9e5fgPwv9BeB6peBx_VT3ka4jggUNAqJkjhMzA0vHk/edit#gid=0
+
 Гайд по Покровке
 - https://t.me/c/2105638761/10/1334
 
